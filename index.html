@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Data Visualization</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"
+    ></script>
+
+    <style id="compiled-css" type="text/css">
+      h1 {
+        color: brown;
+      }
+    </style>
+
+    <script id="insert"></script>
+  </head>
+  <body>
+    <h3>18CS3016-Cloud Computing and IoT Assignment 1</h3>
+    <h3>Name:Joseph Stuart</h3>
+    <h3>Register Number: URK18CS222</h3>
+    <h1 style="text-align: center">Marks Scored</h1>
+    <canvas id="myChart" width="400" height="250"></canvas>
+    <input type="button" value="Add Data" onclick="adddata()" />
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("myChart");
+      var data = {
+        labels: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+        ],
+        datasets: [
+          {
+            label: "Marks Scored by Student 1",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: "butt",
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: "miter",
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 5,
+            pointHitRadius: 10,
+            data: [65, 59, 80, 40, 56, 55, 40],
+          },
+          {
+            label: "Marks Scored by Student 2",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: "butt",
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: "miter",
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 5,
+            pointHitRadius: 10,
+            data: [45, 39, 70, 30, 46, 65, 70],
+          },
+        ],
+      };
+
+      function adddata() {
+        myLineChart.data.datasets[0].data[7] = 60;
+        myLineChart.data.datasets[1].data[7] = 70;
+        myLineChart.data.labels[7] = "August";
+        myLineChart.update();
+      }
+
+      var option = {
+        showLines: true,
+      };
+      var myLineChart = Chart.Line(canvas, {
+        data: data,
+        options: option,
+      });
+    </script>
+
+    <script>
+      if (window.parent && window.parent.parent) {
+        window.parent.parent.postMessage(
+          [
+            "resultsFrame",
+            {
+              height: document.body.getBoundingClientRect().height,
+              slug: "hqeyk8sg",
+            },
+          ],
+          "*"
+        );
+      }
+
+      window.name = "result";
+    </script>
+  </body>
+</html>
